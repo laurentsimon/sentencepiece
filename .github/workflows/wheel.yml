@@ -124,7 +124,7 @@ jobs:
           echo "::set-output name=digests::$(cat checksums.txt | base64 -w0)"
 
   provenance:
-    needs: [build, build-info]
+    needs: [build_wheels, build-info]
     permissions:
       actions: read   # To read the workflow path.
       id-token: write # To sign the provenance.
